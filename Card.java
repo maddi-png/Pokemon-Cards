@@ -11,7 +11,7 @@ public class Card
     private String name;
     private double value;
     private String image;
-    static final String DEFAULT_IMAGE = "blankcard.jpg";
+    static final String DEFAULT_IMAGE = "card images/blankcard.jpg";
 
     /**
      * Constructor for objects of class Card
@@ -27,22 +27,28 @@ public class Card
             this.image = img;
         }
     }
-    
+
     public Card(String nm, double price)
     {
         // initialise instance variables
         this(nm, price, DEFAULT_IMAGE);
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return y;
+    
+    public void displayCard() {
+        int locX = 100;
+        int locY = 100;
+        final double WIDTH = 370;
+        final double HEIGHT = 500;
+        
+        UI.drawImage(this.image, locX, locY, WIDTH, HEIGHT);
     }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public double getValue() {
+        return this.value;
+    }
+
 }
